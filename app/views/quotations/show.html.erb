@@ -13,23 +13,28 @@
   </div>
 </div>
 
-<div class="container new-container ">
-  <h6 class="scope-title">Scope</h6>
+<div class="container new-container">
+  <h6 class="scope-title">SCOPE</h6>
   <div>
     <p class="scope-text"><%= @quotation.scope %></p>
   </div>
-
-
-<div class="container">
-  <div class="row">
-    <% @quotation.requirements.each do |r| %>
-      <div class="col-md-4">
-        <%= r.name %> <br>
-        <%= r.title %> <br>
-        <%= r.description %> <br>
-      </div>
-    <% end %>
-  </div>
-  </div>
-
 </div>
+
+
+<div class="bg-dark">
+  <div class="container new-container">
+    <h6 class="scope-title text-color">REQUERIMIENTOS</h6>
+    <div class="row">
+      <% @quotation.requirements.each do |r| %>
+      <div class="col-md-4">
+        <span class="nombre-requerimiento"><%= r.name %></span> <br>
+        <h4 class="titulos"><%= r.title %></h4> <br>
+        <h6 class="descripciones"><%= (simple_format (r.description)).html_safe %><h6> <br> <!-- Para crear nuevas lineas es con <br> -->
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

@@ -14,6 +14,7 @@
           <%= f.input :photo_cache, as: :hidden %>
 
           <%= f.simple_fields_for :requirements do |pf| %>
+            <h2>NUEVO REQUERIMIENTO</h2>
               <%= render 'requirement_fields', f: pf %>
           <% end %>
 

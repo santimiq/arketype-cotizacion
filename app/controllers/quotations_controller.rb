@@ -8,6 +8,7 @@ class QuotationsController < ApplicationController
   def show
     @quotation = Quotation.friendly.find(params[:id])
      authorize @quotation
+     @skip_navbar = true
   end
 
   def new
@@ -16,7 +17,6 @@ class QuotationsController < ApplicationController
       @quotation.requirements.build
     end
     authorize @quotation
-
   end
 
   def create
