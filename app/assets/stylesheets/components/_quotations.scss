@@ -1,0 +1,25 @@
+.quotations-photo {
+  width: 100%;
+    // float: left;
+    // margin-right: -100%;
+    // position: relative;
+    // opacity: 1;
+    display: block;
+    z-index: 9999;
+}
+
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 450px 0 100px 0;
+}
+
+.background-banner {
+  background-color: #292929;
+}
+
+.line-grey-2 {
+      border-top: 1px solid grey;
+    padding-top: 50px;
+}

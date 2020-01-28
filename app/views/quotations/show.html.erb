@@ -1,0 +1,27 @@
+<div class="banner" style="background-image: url('<%= cl_image_path @quotation.photo, :width => 100 %>')">
+  <div class="container line-grey-2">
+          <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12 background-banner">
+        <h4 class="text-color text-uppercase"> <%= @quotation.titulo %></h4>
+        <span class="text-color"> <%= @quotation.servicio %></span>
+        <p class="text-color"> <%= @quotation.fecha %></p>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12 button-right">
+          <button class="btn-show">VER MÁS</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container new-container ">
+  <h6 class="scope-title">Scope</h6>
+  <div>
+    <p class="scope-text"><%= @quotation.scope %></p>
+  </div>
+    <% @quotation.requirements.each do |r| %>
+      <%= r.name %> <br>
+      <%= r.title %> <br>
+      <%= r.description %> <br>
+    <% end %>
+
+</div>

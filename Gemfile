@@ -8,6 +8,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '6.0.1'
 gem 'redis'
+gem 'pundit'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
@@ -15,6 +16,18 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '~> 2.0'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
+
+gem 'friendly_id', '~> 5.2.4'
+gem 'cocoon'
+
+
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

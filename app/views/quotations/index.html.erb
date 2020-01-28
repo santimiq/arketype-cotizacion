@@ -1,0 +1,24 @@
+<div class="background-black">
+  <div class="container" >
+    <div class="margen-div">
+      <h6 class="proyectos-on">PROYECTOS - ON</h6>
+    </div>
+      <% @quotations.each do |quotation| %>
+      <div class="line-grey row">
+        <div class="col-md-4">
+          <h4 class="text-quotation"><%= quotation.titulo %></h4>
+        </div>
+        <div class="col-md-4">
+          <span class="span-text"><%= quotation.servicio %></span>
+        </div>
+        <div class="col-md-4">
+          <%= link_to quotation_path(quotation) do %>
+          <button class="btn-index  float-right">VER</button>
+          <% end %>
+        </div>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+

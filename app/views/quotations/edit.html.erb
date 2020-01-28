@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 offset-3">
+      <!-- Insert form here -->
+      <div class="form-login">
+        <h1> Crear Cotización</h1>
+        <%= simple_form_for [@quotation] do |f| %>
+          <%= f.input :titulo %>
+          <%= f.input :servicio %>
+          <%= f.input :fecha %>
+          <%= f.input :scope %>
+
+            <%= f.submit %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
