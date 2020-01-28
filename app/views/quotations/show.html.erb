@@ -18,10 +18,18 @@
   <div>
     <p class="scope-text"><%= @quotation.scope %></p>
   </div>
+
+
+<div class="container">
+  <div class="row">
     <% @quotation.requirements.each do |r| %>
-      <%= r.name %> <br>
-      <%= r.title %> <br>
-      <%= r.description %> <br>
+      <div class="col-md-4">
+        <%= r.name %> <br>
+        <%= r.title %> <br>
+        <%= r.description %> <br>
+      </div>
     <% end %>
+  </div>
+  </div>
 
 </div>
