@@ -16,6 +16,9 @@ class QuotationsController < ApplicationController
     3.times do
       @quotation.requirements.build
     end
+    5.times do
+      @quotation.phases.build
+    end
     authorize @quotation
   end
 
@@ -53,6 +56,6 @@ class QuotationsController < ApplicationController
     end
 
     def quotation_params
-      params.require(:quotation).permit(:titulo, :servicio, :fecha, :scope, :photo, requirements_attributes: [:id, :name, :title, :description, :_destroy])
+      params.require(:quotation).permit(:titulo, :servicio, :fecha, :scope, :photo, requirements_attributes: [:id, :name, :title, :description, :_destroy], phases_attributes: [:id, :title, :description])
     end
 end

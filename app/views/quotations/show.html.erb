@@ -36,5 +36,19 @@
   </div>
 </div>
 
+<div class="bg-dark">
+  <div class="container new-container">
+    <h6 class="scope-title text-color">PROCESOS</h6>
+    <div class="row">
+      <% @quotation.phases.each do |phase| %>
+      <div class="col-md-4">
+        <span class="nombre-requerimiento"><%= phase.title %></span> <br>
+        <h6 class="titulos"><%= phase.description %></h6> <br>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 
 

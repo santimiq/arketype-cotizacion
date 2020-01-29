@@ -19,6 +19,11 @@
               <%= render 'requirement_fields', f: pf %>
           <% end %>
 
+          <%= f.simple_fields_for :phases do |ph| %>
+            <h2>NUEVA FASE</h2>
+              <%= render 'phase_fields', f: ph %>
+          <% end %>
+
         <div id="requirement">
 
           <div class="links">
