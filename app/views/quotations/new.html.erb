@@ -13,6 +13,7 @@
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
 
+
           <%= f.simple_fields_for :requirements do |pf| %>
             <h2>NUEVO REQUERIMIENTO</h2>
               <%= render 'requirement_fields', f: pf %>
@@ -21,7 +22,7 @@
         <div id="requirement">
 
           <div class="links">
-              <%= link_to_add_association('Agregar Requirimiento', f, :requirements, class: 'btn btn-primary') %>
+              <%# <%= link_to_add_association('Agregar Requirimiento', f, :requirements, class: 'btn btn-primary') %>
           </div>
         </div>
 
