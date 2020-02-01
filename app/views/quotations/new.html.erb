@@ -19,6 +19,7 @@
               <%= render 'requirement_fields', f: pf %>
           <% end %>
         </div>
+
         <%= link_to_add_association 'Agregar Requerimientos', f, :requirements, data: { association_insertion_node: '.requirements', association_insertion_method: :append } %>
 
         <div class="phases">
@@ -27,6 +28,7 @@
               <%= render 'phase_fields', f: ph %>
           <% end %>
         </div>
+
         <%= link_to_add_association 'Agregar Fases', f, :phases, data: { association_insertion_node: '.phases', association_insertion_method: :append } %>
 
         <%= f.simple_fields_for :conditions do |con| %>
