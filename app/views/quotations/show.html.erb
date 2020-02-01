@@ -7,16 +7,16 @@
         <p class="text-color"> <%= @quotation.fecha %></p>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-12 button-right">
-          <button class="btn-show">VER MÁS</button>
+          <a href="#scope"><button class="btn-show">VER MÁS</button></a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container new-container">
+<div class="container new-container" id="scope">
   <h6 class="scope-title">SCOPE</h6>
-  <div>
-    <p class="scope-text"><%= @quotation.scope %></p>
+  <div class="col-md-8">
+    <p class="scope-text"><%= (simple_format (@quotation.scope), class: 'scope-text').html_safe %></p>
   </div>
 </div>
 
@@ -27,28 +27,49 @@
     <div class="row">
       <% @quotation.requirements.each do |r| %>
       <div class="col-md-4">
-        <span class="nombre-requerimiento"><%= r.name %></span> <br>
-        <h4 class="titulos"><%= r.title %></h4> <br>
-        <h6 class="descripciones"><%= (simple_format (r.description)).html_safe %><h6> <br> <!-- Para crear nuevas lineas es con <br> -->
+        <div id="BodyField">
+          <span class="nombre-requerimiento"><%= r.name %></span>
+        </div>
+        <div class="video-field-new">
+          <h4 class="titulos"><%= r.title %></h4>
+          <h6 class="descripciones"><%= (simple_format (r.description)).html_safe %><h6> <!-- Para crear nuevas lineas es con <br> -->
+        </div>
       </div>
       <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="bg-claro">
+  <div class="container new-container">
+    <h6 class="scope-title">PROCESO</h6>
+    <div class="row">
+      <% @quotation.phases.each do |phase| %>
+      <div class="phase-bottom">
+        <div class="col-md-10">
+          <h1 class="phase-title"><%= phase.title %></h1>
+        </div>
+        <div class="col-md-8">
+          <p class="phase-p"><%= phase.description %></p>
+        </div>
+      </div>
+        <% end %>
     </div>
   </div>
 </div>
 
 <div class="bg-dark">
   <div class="container new-container">
-    <h6 class="scope-title text-color">PROCESOS</h6>
+    <h6 class="scope-title text-color">TERMINOS & CONDICIONES</h6>
     <div class="row">
-      <% @quotation.phases.each do |phase| %>
+      <% @quotation.conditions.each do |r| %>
       <div class="col-md-4">
-        <span class="nombre-requerimiento"><%= phase.title %></span> <br>
-        <h6 class="titulos"><%= phase.description %></h6> <br>
+        <div class="video-field-new">
+          <h6 class="descripciones"><%= (simple_format (r.description)).html_safe %><h6> <!-- Para crear nuevas lineas es con <br> -->
+        </div>
       </div>
       <% end %>
     </div>
   </div>
 </div>
-
-
 

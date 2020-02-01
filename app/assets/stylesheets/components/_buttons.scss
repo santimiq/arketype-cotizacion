@@ -1,0 +1,39 @@
+.btn-index {
+  border-radius: 25px !important;
+  text-decoration: none;
+    outline: none;
+    color: #f1f2f2;
+    background-color: transparent;
+    padding: 0 26px;
+    height: 30px;
+    font-size: 11px;
+    line-height: 27px;
+    min-width: 0;
+    border: 2px solid #f1f2f2;
+}
+
+.btn-show {
+  border-radius: 25px !important;
+    text-decoration: none;
+    outline: none;
+    color: #f1f2f2;
+    background-color: transparent;
+        padding: 0 26px;
+    height: 40px;
+    min-width: 150px;
+    line-height: 36px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 2px solid #f1f2f2;
+    &:hover {
+        background-color: #fff;
+        color: #222;
+        cursor: pointer;
+    }
+}
+
+.button-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

@@ -13,24 +13,26 @@
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
 
-
+        <div class="requirements">
           <%= f.simple_fields_for :requirements do |pf| %>
             <h2>NUEVO REQUERIMIENTO</h2>
               <%= render 'requirement_fields', f: pf %>
           <% end %>
+        </div>
+        <%= link_to_add_association 'Agregar Requerimientos', f, :requirements, data: { association_insertion_node: '.requirements', association_insertion_method: :append } %>
 
+        <div class="phases">
           <%= f.simple_fields_for :phases do |ph| %>
             <h2>NUEVA FASE</h2>
               <%= render 'phase_fields', f: ph %>
           <% end %>
-
-        <div id="requirement">
-
-          <div class="links">
-              <%# <%= link_to_add_association('Agregar Requirimiento', f, :requirements, class: 'btn btn-primary') %>
-          </div>
         </div>
+        <%= link_to_add_association 'Agregar Fases', f, :phases, data: { association_insertion_node: '.phases', association_insertion_method: :append } %>
 
+        <%= f.simple_fields_for :conditions do |con| %>
+          <h2>TERMINOS Y CONDICIONES</h2>
+            <%= render 'condition_fields', f: con %>
+        <% end %>
 
           <%= f.submit %>
 

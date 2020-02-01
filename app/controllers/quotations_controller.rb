@@ -13,12 +13,9 @@ class QuotationsController < ApplicationController
 
   def new
     @quotation = Quotation.new
-    3.times do
-      @quotation.requirements.build
-    end
-    5.times do
-      @quotation.phases.build
-    end
+    @quotation.requirements.build
+    @quotation.phases.build
+    @quotation.conditions.build
     authorize @quotation
   end
 
@@ -56,6 +53,7 @@ class QuotationsController < ApplicationController
     end
 
     def quotation_params
-      params.require(:quotation).permit(:titulo, :servicio, :fecha, :scope, :photo, requirements_attributes: [:id, :name, :title, :description, :_destroy], phases_attributes: [:id, :title, :description])
+      params.require(:quotation).permit(:titulo, :servicio, :fecha, :scope, :photo, requirements_attributes: [:id, :name, :title, :description, :_destroy],
+         phases_attributes: [:id, :title, :description], conditions_attributes: [:id, :description, :_destroy])
     end
 end

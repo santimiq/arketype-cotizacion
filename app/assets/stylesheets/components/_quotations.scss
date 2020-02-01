@@ -11,7 +11,9 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 450px 0 100px 0;
+  padding: 450px 0 50px 0;
+  animation: kenBurnsEast 25s linear infinite alternate;
+  -webkit-animation: kenBurnsEast 25s linear infinite alternate;
 }
 
 .background-banner {

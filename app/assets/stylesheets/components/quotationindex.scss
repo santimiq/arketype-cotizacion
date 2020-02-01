@@ -1,9 +1,3 @@
-.background-black {
-  background: #292929;
-  // height: 100vh;
-  padding-top: 120px;
-}
-
 .text-quotation {
     color: #f1f2f2;
     text-transform: uppercase;
@@ -12,35 +6,6 @@
 }
 .text:hover {
   text-decoration: none;
-}
-
-.btn-index {
-  border-radius: 25px !important;
-  text-decoration: none;
-    outline: none;
-    color: #f1f2f2;
-    background-color: transparent;
-    padding: 0 26px;
-    height: 30px;
-    font-size: 11px;
-    line-height: 27px;
-    min-width: 0;
-    border: 2px solid #f1f2f2;
-}
-
-.btn-show {
-  border-radius: 25px !important;
-    text-decoration: none;
-    outline: none;
-    color: #f1f2f2;
-    background-color: transparent;
-        padding: 0 26px;
-    height: 40px;
-    min-width: 150px;
-    line-height: 36px;
-    font-size: 12px;
-    font-weight: 700;
-    border: 2px solid #f1f2f2;
 }
 
 .span-text {
@@ -80,12 +45,6 @@
   padding-top: 20px;
 }
 
-.button-right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 .scope-text {
   font-weight: 400;
   font-size: 13px;
@@ -118,10 +77,6 @@
 
 h4 {
   margin-bottom: 0;
-}
-
-.bg-dark {
-  background-color: #292929;
 }
 
 .titulos {

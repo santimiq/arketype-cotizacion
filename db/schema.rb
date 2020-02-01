@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_29_181201) do
+ActiveRecord::Schema.define(version: 2020_01_31_175417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conditions", force: :cascade do |t|
+    t.text "description"
+    t.bigint "quotation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["quotation_id"], name: "index_conditions_on_quotation_id"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -72,6 +80,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_181201) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "conditions", "quotations"
   add_foreign_key "phases", "quotations"
   add_foreign_key "quotations", "users"
   add_foreign_key "requirements", "quotations"
