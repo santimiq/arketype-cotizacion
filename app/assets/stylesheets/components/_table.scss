@@ -1,0 +1,39 @@
+.table {
+    width: 100%;
+    max-width: 100%;
+}
+
+th {
+  border-top: 0;
+  border-bottom: 2px solid #ddd;
+  padding: 8px;
+  vertical-align: middle !important;
+  line-height: 24px !important;
+  text-align: left;
+  font-size: 13px;
+  color: #666666;
+}
+
+td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    vertical-align: middle !important;
+    line-height: 24px !important;
+    color: #b2b2b2;
+}
+
+
+td h6{
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 12px !important;
+  color: #b2b2b2;
+}
+
+
+
+thead:first-child > tr:first-child > th {
+  border-top: 0 !important;
+}

@@ -73,3 +73,23 @@
   </div>
 </div>
 
+
+<div class="bg-claro">
+  <div class="container new-container col-md-10">
+    <table class="table">
+  <tr>
+    <th>Concepto</th>
+    <th>Cantidad</th>
+    <th>Subtotal</th>
+  </tr>
+  <% @quotation.concepts.each do |concept| %>
+  <tr>
+    <td><h6><%= concept.name %></h6></td>
+    <td><%= concept.cantidad %></td>
+    <td><%= concept.subtotal %></td>
+  </tr>
+  <% end %>
+</table>
+  </div>
+</div>
+
