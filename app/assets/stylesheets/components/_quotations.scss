@@ -14,6 +14,16 @@
   padding: 450px 0 50px 0;
   animation: kenBurnsEast 25s linear infinite alternate;
   -webkit-animation: kenBurnsEast 25s linear infinite alternate;
+
+  span, p {
+    font-size: 13px;
+  }
+
+  h4 {
+    font-weight: 600 !important;
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 
 .background-banner {
@@ -23,4 +33,14 @@
 .line-grey-2 {
       border-top: 1px solid grey;
     padding-top: 50px;
+}
+
+.col-md-8, .col-md-10 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }

@@ -58,53 +58,59 @@
   </div>
 </div>
 
-<div class="bg-dark">
-  <div class="container new-container">
-    <h6 class="scope-title text-color">TERMINOS & CONDICIONES</h6>
-    <div class="row">
-      <% @quotation.conditions.each do |r| %>
-      <div class="col-md-4">
-        <div class="video-field-new">
-          <h6 class="descripciones"><%= (simple_format (r.description)).html_safe %><h6> <!-- Para crear nuevas lineas es con <br> -->
-        </div>
-      </div>
+<div class="bg-blanco">
+  <div class="container new-container col-md-10">
+  <table class="table">
+    <tr>
+      <th>Concepto</th>
+      <th>Cantidad</th>
+      <th>Subtotal</th>
+    </tr>
+    <% @quotation.concepts.each do |concept| %>
+    <tr>
+      <td><h6><%= concept.name %></h6></td>
+      <td><%= concept.cantidad %></td>
+      <td><%= concept.subtotal %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <table class="table">
+    <% @quotation.totals.each do |subt| %>
+    <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    </tr>
+      <tr>
+        <td>Subtotal</td>
+        <td></td>
+        <td><%= number_to_currency(subt.subtotal) %></td>
+      </tr>
+      <tr>
+        <td>I.V.A</td>
+        <td></td>
+        <td><%=number_to_currency(var = subt.subtotal * 0.16) %></td>
+      </tr>
+      <tr>
+        <td>TOTAL</td>
+        <td></td>
+        <td><%= number_to_currency(var + subt.subtotal)  %></td>
+      </tr>
       <% end %>
-    </div>
+  </table>
   </div>
 </div>
-
 
 <div class="bg-claro">
-  <div class="container new-container col-md-10">
-    <table class="table">
-  <tr>
-    <th>Concepto</th>
-    <th>Cantidad</th>
-    <th>Subtotal</th>
-  </tr>
-  <% @quotation.concepts.each do |concept| %>
-  <tr>
-    <td><h6><%= concept.name %></h6></td>
-    <td><%= concept.cantidad %></td>
-    <td><%= concept.subtotal %></td>
-  </tr>
-  <% end %>
-
-  <% @quotation.totals.each do |subt| %>
-  <tr>
-    <td>Subtotal</td>
-    <td><%= subt.subtotal %></td>
-  </tr>
-  <tr>
-    <td>I.V.A</td>
-    <td><%= var = subt.subtotal * 0.16 %></td>
-  </tr>
-  <tr>
-    <td>TOTAL</td>
-    <td><%= var + subt.subtotal %></td>
-  </tr>
-  <% end %>
-</table>
-  </div>
+  <div class="container new-container">
+    <h6 class="scope-title">TERMINOS & CONDICIONES</h6>
+    <div class="row">
+      <% @quotation.conditions.each do |r| %>
+        <div class="col-md-8">
+              <p class="scope-text"><%= (simple_format (r.description), class: 'scope-text').html_safe %></p> <!-- Para crear nuevas lineas es con <br> -->
+        </div>
+      <% end %>
+      </div>
+    </div>
 </div>
-
