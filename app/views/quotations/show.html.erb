@@ -89,6 +89,21 @@
     <td><%= concept.subtotal %></td>
   </tr>
   <% end %>
+
+  <% @quotation.totals.each do |subt| %>
+  <tr>
+    <td>Subtotal</td>
+    <td><%= subt.subtotal %></td>
+  </tr>
+  <tr>
+    <td>I.V.A</td>
+    <td><%= var = subt.subtotal * 0.16 %></td>
+  </tr>
+  <tr>
+    <td>TOTAL</td>
+    <td><%= var + subt.subtotal %></td>
+  </tr>
+  <% end %>
 </table>
   </div>
 </div>

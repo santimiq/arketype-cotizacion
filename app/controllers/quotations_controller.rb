@@ -17,6 +17,7 @@ class QuotationsController < ApplicationController
     @quotation.phases.build
     @quotation.conditions.build
     @quotation.concepts.build
+    @quotation.totals.build
     authorize @quotation
   end
 
@@ -55,6 +56,6 @@ class QuotationsController < ApplicationController
 
     def quotation_params
       params.require(:quotation).permit(:titulo, :servicio, :fecha, :scope, :photo, requirements_attributes: [:id, :name, :title, :description, :_destroy],
-        phases_attributes: [:id, :title, :description], conditions_attributes: [:id, :description, :_destroy], concepts_attributes: [:id, :name, :cantidad, :subtotal, :_destroy])
+        phases_attributes: [:id, :title, :description], conditions_attributes: [:id, :description, :_destroy], concepts_attributes: [:id, :name, :cantidad, :subtotal, :_destroy], totals_attributes: [:id, :subtotal, :_destroy])
     end
 end

@@ -42,6 +42,11 @@
             <%= render 'condition_fields', f: con %>
         <% end %>
 
+        <%= f.simple_fields_for :totals do |subtotal| %>
+          <h2>Subtotal</h2>
+            <%= render 'subtotal_fields', f: subtotal %>
+        <% end %>
+
           <%= f.submit %>
 
         <% end %>
