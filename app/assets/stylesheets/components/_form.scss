@@ -10,10 +10,7 @@
     margin-bottom: 30px;
     text-align: center;
   }
-  .btn {
-    width: 100%;
-    margin-bottom: 20px
-  }
+
 }
 
 .form-display {
@@ -31,4 +28,20 @@
     color: #fff;
     background-color: #d3161a;
     border-color: #d3161a;
+}
+
+.btn-success {
+  color: #fff;
+}
+
+.carrier-wave-field input {
+    color: red; /*or whatever you want to change*/
+}
+
+.btn {
+  margin-bottom: 20px !important;
+}
+
+.mar-bottom {
+  margin-bottom: 50px;
 }

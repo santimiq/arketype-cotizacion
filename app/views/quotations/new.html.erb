@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-sm-6 offset-3">
       <!-- Insert form here -->
       <div class="form-login">
-        <div >
+        <div class="mar-bottom">
           <h1>Cotización</h1>
           <%= simple_form_for @quotation do |f| %>
             <%= f.error_notification %>
@@ -18,41 +18,39 @@
         </div>
 
 
-        <div class="requirements">
+        <div class="requirements mar-bottom">
           <%= f.simple_fields_for :requirements do |pf| %>
             <h4>REQUERIMIENTOS</h4>
               <%= render 'requirement_fields', f: pf %>
           <% end %>
+            <%= link_to_add_association 'Agregar Requerimientos', f, :requirements, class: 'btn btn-primary', data: { association_insertion_node: '.requirements', association_insertion_method: :append } %>
         </div>
-        <%= link_to_add_association 'Agregar Requerimientos', f, :requirements, class: 'btn btn-primary', data: { association_insertion_node: '.requirements', association_insertion_method: :append } %>
 
-        <div class="phases">
+        <div class="phases mar-bottom">
           <%= f.simple_fields_for :phases do |ph| %>
             <h4>FASES</h4>
               <%= render 'phase_fields', f: ph %>
           <% end %>
+          <%= link_to_add_association 'Agregar Fase', f, :phases,class: 'btn btn-primary', data: { association_insertion_node: '.phases', association_insertion_method: :append } %>
         </div>
-        <%= link_to_add_association 'Agregar Fases', f, :phases,class: 'btn btn-primary', data: { association_insertion_node: '.phases', association_insertion_method: :append } %>
 
-        <div class="concepts">
+        <div class="concepts mar-bottom">
           <%= f.simple_fields_for :concepts do |con| %>
             <h4>CONCEPTOS</h4>
               <%= render 'concept_fields', f: con %>
           <% end %>
+          <%= link_to_add_association 'Agregar Concepto', f, :concepts, class: 'btn btn-primary', data: { association_insertion_node: '.concepts', association_insertion_method: :append } %>
         </div>
-        <%= link_to_add_association 'Agregar Concepto', f, :concepts, class: 'btn btn-primary', data: { association_insertion_node: '.concepts', association_insertion_method: :append } %>
 
         <%= f.simple_fields_for :conditions do |con| %>
-          <h4>TERMINOS Y CONDICIONES</h4>
-            <%= render 'condition_fields', f: con %>
+          <%= render 'condition_fields', f: con %>
         <% end %>
 
         <%= f.simple_fields_for :totals do |subtotal| %>
-          <h4>Subtotal</h4>
-            <%= render 'subtotal_fields', f: subtotal %>
+          <%= render 'subtotal_fields', f: subtotal %>
         <% end %>
 
-          <%= f.submit %>
+          <%= f.button :submit, 'Crear Cotizacion', class: 'btn btn-success' %>
 
         <% end %>
       </div>
