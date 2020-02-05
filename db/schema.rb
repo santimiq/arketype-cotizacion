@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_04_183630) do
+ActiveRecord::Schema.define(version: 2020_02_04_224708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,14 @@ ActiveRecord::Schema.define(version: 2020_02_04_183630) do
     t.index ["quotation_id"], name: "index_requirements_on_quotation_id"
   end
 
+  create_table "sub_requirements", force: :cascade do |t|
+    t.string "requerimiento"
+    t.bigint "requirement_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["requirement_id"], name: "index_sub_requirements_on_requirement_id"
+  end
+
   create_table "totals", force: :cascade do |t|
     t.integer "subtotal"
     t.bigint "quotation_id", null: false
@@ -103,5 +111,6 @@ ActiveRecord::Schema.define(version: 2020_02_04_183630) do
   add_foreign_key "phases", "quotations"
   add_foreign_key "quotations", "users"
   add_foreign_key "requirements", "quotations"
+  add_foreign_key "sub_requirements", "requirements"
   add_foreign_key "totals", "quotations"
 end

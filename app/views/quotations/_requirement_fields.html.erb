@@ -3,5 +3,10 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= link_to_remove_association "Eliminar Requerimiento", f, class: 'btn btn-primary' %>
+  <div class="sub_requirements">
+    <%= f.simple_fields_for :sub_requirements, :wrapper => 'inline' do |sub_req| %>
+    <%= render 'sub_requirement_fields', f: sub_req %>
+    <% end %>
+  </div>
+  <%= link_to_add_association 'Agregar Requerimiento', f, :sub_requirements, data: { association_insertion_node: '.sub_requirements', association_insertion_method: :append } %>
 </div>
-
