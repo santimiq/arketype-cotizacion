@@ -1,7 +1,9 @@
 <div class="nested-fields">
-  <%= f.input :name %>
-  <%= f.input :cantidad %>
-  <%= f.input :subtotal %>
-  <%= link_to_remove_association "Eliminar Concepto", f, class: 'btn btn-primary' %>
+  <%= f.input :name, placeholder: 'IMPLEMENTACIÓN PLANTILLA PREMIUM' %>
+  <div class="form-display">
+    <%= f.input :cantidad, placeholder: '1' %>
+    <%= f.input :subtotal, placeholder: 'Por lo general va vacio' %>
+  </div>
+  <%= link_to_remove_association "Eliminar Concepto", f, class: 'btn btn-danger' %>
 </div>
 

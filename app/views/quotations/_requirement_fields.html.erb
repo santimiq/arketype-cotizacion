@@ -1,11 +1,13 @@
 <div class="nested-fields">
-  <%= f.input :name %>
-  <%= f.input :title %>
-  <%= link_to_remove_association "Eliminar Requerimiento", f, class: 'btn btn-primary' %>
+  <div class="form-display">
+    <%= f.input :name, placeholder: 'Generales/Herramientas' %>
+    <%= f.input :title, placeholder: 'Desarrollo'%>
+  </div>
   <div class="sub_requirements">
     <%= f.simple_fields_for :sub_requirements, :wrapper => 'inline' do |sub_req| %>
     <%= render 'sub_requirement_fields', f: sub_req %>
     <% end %>
   </div>
-  <%= link_to_add_association 'Agregar Requerimiento', f, :sub_requirements, data: { association_insertion_node: '.sub_requirements', association_insertion_method: :append } %>
+    <%= link_to_add_association 'Agregar Requerimiento', f, :sub_requirements, class: 'btn btn-primary', data: { association_insertion_node: '.sub_requirements', association_insertion_method: :append } %>
+    <%= link_to_remove_association "Eliminar Requerimientos", f, class: 'btn btn-danger' %>
 </div>
