@@ -1,7 +1,6 @@
 <div class="nested-fields">
   <%= f.input :name %>
   <%= f.input :title %>
-  <%= f.input :description %>
   <%= link_to_remove_association "Eliminar Requerimiento", f, class: 'btn btn-primary' %>
   <div class="sub_requirements">
     <%= f.simple_fields_for :sub_requirements, :wrapper => 'inline' do |sub_req| %>
