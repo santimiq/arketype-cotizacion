@@ -1,10 +1,10 @@
 <div class="nested-fields">
   <div class="form-display">
     <%= f.input :name, placeholder: 'Generales/Herramientas' %>
-    <%= f.input :title, placeholder: 'Desarrollo'%>
+    <%= f.input :title, placeholder: 'Desarrollo' %>
   </div>
   <div class="sub_requirements">
-    <%= f.simple_fields_for :sub_requirements, :wrapper => 'inline' do |sub_req| %>
+    <%= f.simple_fields_for :sub_requirements do |sub_req| %>
     <%= render 'sub_requirement_fields', f: sub_req %>
     <% end %>
   </div>

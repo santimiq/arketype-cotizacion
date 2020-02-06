@@ -10,6 +10,11 @@
     line-height: 27px;
     min-width: 0;
     border: 2px solid #f1f2f2;
+
+    &:hover {
+      background-color: #f1f1f1;
+      color: #222;
+    }
 }
 
 .btn-show {
