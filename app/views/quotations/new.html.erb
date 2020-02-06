@@ -35,6 +35,10 @@
             <h4>FASES</h4>
               <%= render 'phase_fields', f: ph %>
           <% end %>
+          <%= f.simple_fields_for :fecha_habils do |fec| %>
+            <h4>DIAS APROX</h4>
+          <%= render 'fecha_fields', f: fec %>
+          <% end %>
         </div>
           <%= link_to_add_association 'Agregar Fase', f, :phases, class: 'btn btn-primary', data: { association_insertion_node: '.phases', association_insertion_method: :append } %>
 
