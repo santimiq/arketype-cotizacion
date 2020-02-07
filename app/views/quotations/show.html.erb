@@ -45,7 +45,9 @@
 <div class="bg-claro">
   <div class="container new-container">
     <h6 class="scope-title line-greyish">PROCESO</h6>
-      <%=  @quotation.fecha_habils.fecha%>
+      <%  @quotation.days.each do |fec|%>
+        <%= fec.fecha %>
+      <% end %>
       <% @quotation.phases.each do |phase| %>
       <div class="phase-bottom">
         <div class="col-md-10">
