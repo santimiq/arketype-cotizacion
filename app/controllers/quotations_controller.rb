@@ -5,8 +5,9 @@ class QuotationsController < ApplicationController
     @quotations = policy_scope(Quotation).all
   end
 
+
   def show
-    @quotation = Quotation.friendly.find(params[:id])
+    @quotation = Quotation.find_by slug: params[:slug]
      authorize @quotation
      @skip_navbar = true
   end
@@ -23,7 +24,6 @@ class QuotationsController < ApplicationController
   end
 
   def create
-    raise
     @quotation = Quotation.new(quotation_params)
     authorize @quotation
     @quotation.user = current_user
@@ -52,7 +52,7 @@ class QuotationsController < ApplicationController
 
   private
     def find_quotation
-      @quotation = Quotation.find(params[:id])
+      @quotation = Quotation.find_by slug: params[:slug]
       authorize @quotation
     end
 

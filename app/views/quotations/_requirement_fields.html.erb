@@ -2,7 +2,7 @@
   <div class="form-display">
     <%= f.input :name, placeholder: 'Generales/Herramientas' %>
     <%= f.input :title, placeholder: 'Desarrollo' %>
-    <%= f.input :icon_name, collection: Icon.collection, as: :radio_buttons %>
+    <%# <%= f.input :icon_name, collection: Icon.collection, as: :radio_buttons %>
   </div>
   <div class="sub_requirements">
     <%= f.simple_fields_for :sub_requirements do |sub_req| %>
@@ -12,3 +12,4 @@
     <%= link_to_add_association 'Agregar Requerimiento', f, :sub_requirements, class: 'btn btn-primary', data: { association_insertion_node: '.sub_requirements', association_insertion_method: :append } %>
     <%= link_to_remove_association "Eliminar Requerimientos", f, class: 'btn btn-danger' %>
 </div>
+

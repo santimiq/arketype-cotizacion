@@ -1,4 +1,12 @@
 class Quotation < ApplicationRecord
+
+  def set_slug
+    loop do
+      self.slug = SecureRandom.uuid
+      break unless Quotation.where(slug: slug).exists?
+    end
+
+  end
   belongs_to :user
   has_many :requirements, dependent: :destroy
   has_many :phases, dependent: :destroy
