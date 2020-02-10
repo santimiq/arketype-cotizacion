@@ -1,4 +1,6 @@
-class Icon
+class Icon < ApplicationRecord
+  belongs_to :requirement
+
   AVAILABLE_ICONS = %w[times star]
 
   attr_reader :value

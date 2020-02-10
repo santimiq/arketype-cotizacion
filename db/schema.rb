@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_06_214733) do
+ActiveRecord::Schema.define(version: 2020_02_10_175707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 2020_02_06_214733) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "icons", force: :cascade do |t|
+    t.string "name"
+    t.bigint "requirement_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["requirement_id"], name: "index_icons_on_requirement_id"
   end
 
   create_table "phases", force: :cascade do |t|
@@ -125,6 +133,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_214733) do
   add_foreign_key "conditions", "quotations"
   add_foreign_key "days", "quotations"
   add_foreign_key "fecha_habils", "quotations"
+  add_foreign_key "icons", "requirements"
   add_foreign_key "phases", "quotations"
   add_foreign_key "quotations", "users"
   add_foreign_key "requirements", "quotations"
