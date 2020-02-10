@@ -59,6 +59,9 @@
           <% r.sub_requirements.each do |req| %>
           <h6 class="descripciones"><%= req.requerimiento %></h6>
           <% end %>
+          <% r.icons.each do |ic| %>
+          <h6 class="descripciones"><%= ic.name.to_sym %></h6>
+          <% end %>
         </div>
       </div>
       <% end %>
@@ -70,7 +73,7 @@
   <div class="container new-container">
     <h6 class="scope-title line-greyish">PROCESO</h6>
       <%  @quotation.days.each do |fec|%>
-        <%= fec.fecha %>
+        <h6 class="fecha-estimada"><%= fec.fecha %></h6>
       <% end %>
       <% @quotation.phases.each do |phase| %>
       <div class="phase-bottom">
