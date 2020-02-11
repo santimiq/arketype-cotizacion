@@ -1,7 +1,7 @@
 class Icon < ApplicationRecord
   belongs_to :requirement
 
-  AVAILABLE_ICONS = %w[times star]
+  AVAILABLE_ICONS = %w[user-friends list cog]
 
   attr_reader :value
   def initialize(value)

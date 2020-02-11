@@ -25,42 +25,16 @@
   <div class="container new-container">
     <h6 class="scope-title text-color line-grey-osc">REQUERIMIENTOS</h6>
     <div class="row">
-
-    <% @quotation.requirements.each do |ec| %>
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><%= ec.name %></a>
-      </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><%= ec.name %></a>
-  </li>
-</ul>
-<% ec.sub_requirements.each do |req| %>
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><p><%= req.requerimiento %></p></div>
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
-</div>
-    <% end %>
-    <% end %>
-
-
-
-
-
-
       <% @quotation.requirements.each do |r| %>
      <div class="col-md-4">
         <div id="">
-          <span class="nombre-requerimiento"><%= r.name %></span>
+          <i class='fa fa-<%= r.nombre %>'></i>
+          <span class="nombre-requerimiento"><%= r.super_title %></span>
         </div>
         <div class="">
           <h4 class="titulos"><%= r.title %></h4>
           <% r.sub_requirements.each do |req| %>
           <h6 class="descripciones"><%= req.requerimiento %></h6>
-          <% end %>
-          <% r.icons.each do |ic| %>
-          <h6 class="descripciones"><%= ic.name.to_sym %></h6>
           <% end %>
         </div>
       </div>
@@ -85,7 +59,6 @@
         </div>
       </div>
         <% end %>
-
   </div>
 </div>
 

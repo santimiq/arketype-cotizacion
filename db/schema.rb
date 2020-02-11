@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_175707) do
+ActiveRecord::Schema.define(version: 2020_02_10_224446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_175707) do
   end
 
   create_table "icons", force: :cascade do |t|
-    t.string "name"
+    t.string "icon_name"
     t.bigint "requirement_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -92,11 +92,12 @@ ActiveRecord::Schema.define(version: 2020_02_10_175707) do
   end
 
   create_table "requirements", force: :cascade do |t|
-    t.string "name"
+    t.string "nombre"
     t.string "title"
     t.bigint "quotation_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "super_title"
     t.index ["quotation_id"], name: "index_requirements_on_quotation_id"
   end
 
