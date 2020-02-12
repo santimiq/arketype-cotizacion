@@ -105,4 +105,9 @@ h4 {
   letter-spacing: 2px;
   font-weight: 700;
   color: #fff;
+  opacity: .5;
+
+  &.active {
+    opacity: 1;
+  }
 }

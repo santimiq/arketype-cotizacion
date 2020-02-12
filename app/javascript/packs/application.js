@@ -13,8 +13,11 @@ const titles = document.querySelectorAll(".title")
 const removeAll = function(node, className, hint){
   node.forEach((e)=>{
    const first =  e.children[0];
+    const second = e.children[1];
+
     if (first.classList.contains(className) && first.classList.contains(hint)) {
         first.classList.remove(className)
+        second.classList.remove(className)
     }
   })
 };
@@ -27,8 +30,10 @@ const hideAll = function() {
 
 const addActiveToI = function(e){
   const first = e.children[0];
-    if(first.classList.contains("fa")){
+  const second = e.children[1];
+    if(first.classList.contains("fa")  ){
       first.classList.add("active")
+      second.classList.add("active")
     }
 }
 
@@ -71,6 +76,7 @@ titles.forEach((title) => {
       if(event.target.classList.contains("active")){
       }else{
         removeAll(titles,"active", "fa")
+        addActiveToI(title)
         addActiveToI(title)
         hideAll()
         removeDNoneIfIconIsActive()
