@@ -69,49 +69,49 @@
     <div class="col-sm-12">
       <h6 class="scope-title line-greyish">Cotización</h6>
     </div>
-  </div>
 
-  <div class="row justify-content-center" style="padding-bottom: 100px">
-    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Concepto</th>
-            <th>Cantidad</th>
-            <th class="text-right">Subtotal</th>
-          </tr>
-        </thead>
-        <% @quotation.concepts.each do |concept| %>
-        <tbody>
-          <tr>
-            <td width="70%"><h6><%= concept.name %></h6></td>
-            <td class="digit"><%= concept.cantidad %></td>
-            <td><%= concept.subtotal %></td>
-          </tr>
-        </tbody>
-        <% end %>
-      </table>
-
-
-      <table class="table cart">
-      <% @quotation.totals.each do |subt| %>
-        <tbody class="price-total-table">
-          <tr class="total">
-            <td width="80%">SUBTOTAL</td>
-            <td class="text-right"><%= number_to_currency(subt.subtotal) %></td>
-          </tr>
-          <tr class="total">
-            <td>I.V.A</td>
-            <td class="text-right"><%=number_to_currency(var = subt.subtotal * 0.16) %></td>
-          </tr>
-          <tr class="total">
-            <td>TOTAL</td>
-            <td class="text-right"><%= number_to_currency(var + subt.subtotal)  %></td>
-          </tr>
+    <div class="row justify-content-center" style="padding-bottom: 100px">
+      <div class="col-md-8 col-sm-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Cantidad</th>
+              <th class="text-right">Subtotal</th>
+            </tr>
+          </thead>
+          <% @quotation.concepts.each do |concept| %>
+          <tbody>
+            <tr>
+              <td width="70%"><h6><%= concept.name %></h6></td>
+              <td class="digit"><%= concept.cantidad %></td>
+              <td><%= concept.subtotal %></td>
+            </tr>
+          </tbody>
           <% end %>
-        </tbody>
-    </div> 
+        </table>
+
+
+        <table class="table cart">
+        <% @quotation.totals.each do |subt| %>
+          <tbody class="price-total-table">
+            <tr class="total">
+              <td width="80%">SUBTOTAL</td>
+              <td class="text-right"><%= number_to_currency(subt.subtotal) %></td>
+            </tr>
+            <tr class="total">
+              <td>I.V.A</td>
+              <td class="text-right"><%=number_to_currency(var = subt.subtotal * 0.16) %></td>
+            </tr>
+            <tr class="total">
+              <td>TOTAL</td>
+              <td class="text-right"><%= number_to_currency(var + subt.subtotal)  %></td>
+            </tr>
+            <% end %>
+          </tbody>
+      </div> 
       </table>
+      </div>
   </div>
 </div>
 
