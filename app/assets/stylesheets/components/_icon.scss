@@ -1,12 +1,15 @@
-i {
-  display: block !important;
-  margin-bottom: 16px;
-  font-size: 64px;
-  opacity: .5;
-  color: #fff;
+.title {
+  i {
+    display: block !important;
+    margin-bottom: 16px;
+    font-size: 64px;
+    opacity: .5;
+    color: #fff;
 
-  &:active {
-    color: #3b3be8;
-    opacity: 1;
+    &:active {
+      color: #3b3be8;
+      opacity: 1;
+    }
+
   }
 }

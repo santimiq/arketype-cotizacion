@@ -24,19 +24,24 @@
 <div class="bg-dark">
   <div class="container new-container">
     <h6 class="scope-title text-color line-grey-osc">REQUERIMIENTOS</h6>
-    <div class="row">
-      <% @quotation.requirements.each do |r| %>
-     <div class="col-md-4">
-        <div id="">
+    <div class="row justify-content-center">
+
+
+
+      <% @quotation.requirements.each_with_index do |r, i| %>
+     <div class="">
+        <div class="title active">
           <i class='fa fa-<%= r.nombre %>'></i>
           <span class="nombre-requerimiento"><%= r.super_title %></span>
         </div>
-        <div class="">
+      <div class="row justify-content-center">
+        <div class="firstP <%= i == 0 ? "" : "d-none" %>">
           <h4 class="titulos"><%= r.title %></h4>
           <% r.sub_requirements.each do |req| %>
           <h6 class="descripciones"><%= req.requerimiento %></h6>
           <% end %>
         </div>
+      </div>
       </div>
       <% end %>
     </div>

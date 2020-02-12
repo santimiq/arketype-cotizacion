@@ -1,74 +1,66 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 offset-3">
+<div class="container pt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-6">
       <!-- Insert form here -->
-      <div class="form-login">
-          <h1>Cotización</h1>
-
+      <form action="#">
+        <h1 class="text-center mb-5">Cotización</h1>
+        <div class="form-login">
           <%= simple_form_for @quotation do |f| %>
             <%= f.error_notification %>
-            <div class="form-display">
-              <%= f.input :titulo, placeholder: 'McDonalds' %>
-              <%= f.input :servicio, placeholder: 'Desarrollo Web' %>
+            <div class="form-row">
+              <div class="col-6 form-group">
+                <%= f.input :titulo, placeholder: 'McDonalds' %>
+              </div>
+              <div class="col-6 form-group">
+                <%= f.input :servicio, placeholder: 'Desarrollo Web' %>
+              </div>
             </div>
             <%= f.input :fecha %>
             <%= f.input :scope, placeholder: 'Descripción (Cada enter es una línea aparte)' %>
             <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
 
+            <div class="requirements">
+              <%= f.simple_fields_for :requirements do |pf| %>
+                <h4>REQUERIMIENTOS</h4>
+                  <%= render 'requirement_fields', f: pf %>
+              <% end %>
+            </div>
+            <%= link_to_add_association 'Agregar Requerimientos', f, :requirements, class: 'btn btn-primary', data: { association_insertion_node: '.requirements', association_insertion_method: :append } %>
 
-        <div class="requirements">
-          <%= f.simple_fields_for :requirements do |pf| %>
-            <h4>REQUERIMIENTOS</h4>
-              <%= render 'requirement_fields', f: pf %>
+            <%= f.simple_fields_for :days do |fec| %>
+              <h4>ESTIMADO</h4>
+              <%= render 'fecha_fields', f: fec %>
+            <% end %>
+
+            <div class="phases">
+              <%= f.simple_fields_for :phases do |ph| %>
+                <h4>FASES</h4>
+                <%= render 'phase_fields', f: ph %>
+              <% end %>
+            </div>
+            <%= link_to_add_association 'Agregar Fase', f, :phases, class: 'btn btn-primary', data: { association_insertion_node: '.phases', association_insertion_method: :append } %>
+
+            <div class="concepts">
+              <%= f.simple_fields_for :concepts do |con| %>
+                <h4>CONCEPTOS</h4>
+                <%= render 'concept_fields', f: con %>
+              <% end %>
+            </div>
+            <%= link_to_add_association 'Agregar Concepto', f, :concepts, class: 'btn btn-primary', data: { association_insertion_node: '.concepts', association_insertion_method: :append } %>
+
+            <%= f.simple_fields_for :conditions do |con| %>
+              <%= render 'condition_fields', f: con %>
+            <% end %>
+
+            <%= f.simple_fields_for :totals do |subtotal| %>
+              <%= render 'subtotal_fields', f: subtotal %>
+            <% end %>
+
+            <%= f.button :submit, 'Crear Cotizacion', class: 'btn btn-success' %>
           <% end %>
         </div>
-
-          <%= link_to_add_association 'Agregar Requerimientos', f, :requirements, class: 'btn btn-primary', data: { association_insertion_node: '.requirements', association_insertion_method: :append } %>
-
-        <div class="mar-bottom">
-        </div>
-
-          <%= f.simple_fields_for :days do |fec| %>
-            <h4>ESTIMADO</h4>
-            <%= render 'fecha_fields', f: fec %>
-          <% end %>
-        <div class="phases">
-
-          <%= f.simple_fields_for :phases do |ph| %>
-            <h4>FASES</h4>
-            <%= render 'phase_fields', f: ph %>
-          <% end %>
-        </div>
-        <%= link_to_add_association 'Agregar Fase', f, :phases, class: 'btn btn-primary', data: { association_insertion_node: '.phases', association_insertion_method: :append } %>
-
-
-        <div class="mar-bottom">
-        </div>
-
-        <div class="concepts">
-          <%= f.simple_fields_for :concepts do |con| %>
-            <h4>CONCEPTOS</h4>
-              <%= render 'concept_fields', f: con %>
-          <% end %>
-        </div>
-          <%= link_to_add_association 'Agregar Concepto', f, :concepts, class: 'btn btn-primary', data: { association_insertion_node: '.concepts', association_insertion_method: :append } %>
-
-        <div class="mar-bottom">
-        </div>
-
-        <%= f.simple_fields_for :conditions do |con| %>
-          <%= render 'condition_fields', f: con %>
-        <% end %>
-
-        <%= f.simple_fields_for :totals do |subtotal| %>
-          <%= render 'subtotal_fields', f: subtotal %>
-        <% end %>
-
-          <%= f.button :submit, 'Crear Cotizacion', class: 'btn btn-success' %>
-
-        <% end %>
-      </div>
+      </form>
     </div>
   </div>
 </div>
