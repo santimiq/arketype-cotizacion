@@ -2,8 +2,6 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-6 col-lg-6">
       <!-- Insert form here -->
-      <form action="#">
-        <h1 class="text-center mb-5">Cotización</h1>
         <div class="form-login">
           <%= simple_form_for @quotation do |f| %>
             <%= f.error_notification %>
@@ -23,7 +21,7 @@
             <div class="requirements">
               <%= f.simple_fields_for :requirements do |pf| %>
                 <h4>REQUERIMIENTOS</h4>
-                  <%= render 'requirement_fields', f: pf %>
+                <%= render 'requirement_fields', f: pf %>
               <% end %>
             </div>
             <%= link_to_add_association 'Agregar Requerimientos', f, :requirements, class: 'btn btn-primary', data: { association_insertion_node: '.requirements', association_insertion_method: :append } %>
@@ -60,7 +58,7 @@
             <%= f.button :submit, 'Crear Cotizacion', class: 'btn btn-success' %>
           <% end %>
         </div>
-      </form>
     </div>
   </div>
 </div>
+

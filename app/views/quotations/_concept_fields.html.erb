@@ -1,8 +1,14 @@
 <div class="nested-fields">
-  <%= f.input :name, label: 'Nombre', placeholder: 'IMPLEMENTACIÓN PLANTILLA PREMIUM' %>
-  <div class="form-display">
-    <%= f.input :cantidad, placeholder: '1' %>
-    <%= f.input :subtotal, placeholder: 'Por lo general va vacio' %>
+  <div class="form-row">
+    <div class="col-6 form-group">
+      <%= f.input :name, label: 'Nombre', placeholder: 'IMPLEMENTACIÓN PLANTILLA PREMIUM' %>
+    </div>
+    <div class="col-3 form-group">
+      <%= f.input :cantidad, placeholder: '1' %>
+    </div>
+    <div class="col-3 form-group">
+      <%= f.input :subtotal, placeholder: 'Por lo general va vacio' %>
+    </div>
   </div>
   <%= link_to_remove_association "Eliminar Concepto", f, class: 'btn btn-danger' %>
 </div>

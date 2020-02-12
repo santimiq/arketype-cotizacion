@@ -1,15 +1,27 @@
 <div class="nested-fields">
-  <div class="form-display">
-    <%= f.input :super_title, placeholder: 'Generales/Herramientas', label: 'Nombre' %>
-    <%= f.input :title, placeholder: 'Desarrollo' %>
+  <div class="form-row">
+    <div class="col-4 form-group">
+      <%= f.input :super_title, placeholder: 'Generales/Herramientas', label: 'Nombre' %>
+    </div>
+    <div class="col-4 form-group">
+      <%= f.input :title, placeholder: 'Desarrollo' %>
+    </div>
+    <div class="col-4 form-group">
     <%= f.input :nombre, collection: Icon.collection, as: :radio_buttons %>
+    </div>
   </div>
   <div class="sub_requirements">
     <%= f.simple_fields_for :sub_requirements do |sub_req| %>
     <%= render 'sub_requirement_fields', f: sub_req %>
     <% end %>
   </div>
-    <%= link_to_add_association 'Agregar Requerimiento', f, :sub_requirements, class: 'btn btn-primary', data: { association_insertion_node: '.sub_requirements', association_insertion_method: :append } %>
-    <%= link_to_remove_association "Eliminar Requerimientos", f, class: 'btn btn-danger' %>
+  <div class="form-row">
+    <div class="col-6 form-group">
+      <%= link_to_add_association 'Agregar Requerimiento', f, :sub_requirements, class: 'btn btn-primary', data: { association_insertion_node: '.sub_requirements', association_insertion_method: :append } %>
+    </div>
+    <div class="col-6 form-group">
+      <%= link_to_remove_association "Eliminar Requerimientos", f, class: 'btn btn-danger' %>
+    </div>
+  </div>
 </div>
 
