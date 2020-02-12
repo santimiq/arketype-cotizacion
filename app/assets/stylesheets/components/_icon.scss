@@ -6,6 +6,12 @@
     opacity: .5;
     color: #fff;
 
+    &:hover {
+      opacity: 1;
+      color: #fff;
+      cursor: pointer;
+    }
+
     &.active {
       color: #3b3be8;
       opacity: 1;

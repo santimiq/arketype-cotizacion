@@ -33,23 +33,36 @@ const addActiveToI = function(e){
 }
 
 const removeDNoneIfIconIsActive = function(){
-  let parent = document.querySelectorAll(".title-parent");
-  console.log(parent);
-  parent.forEach((child)=>{
-    console.log(".child")
-    child.querySelectorAll(".prueba").forEach((i)=>{
-      console.log("prueba")
-      i.querySelectorAll(".title").forEach((j)=>{
-        console.log("title")
-        if(j.children[0].classList.contains("active")){
-          console.log("title")
-          i.querySelectorAll(".firstP").forEach((k)=>{
-            k.classList.remove("d-none")
-          })
-        }
-      })
-    })
-  })
+  const parent = document.querySelector(".title-parent");
+  console.log(parent.children.length);
+
+  for(var i = 0; i < parent.children.length; i++){
+    const prueba = parent.children[i]
+    if(prueba.children[0].children[0].classList.contains("active")){
+      console.log("has active")
+     const firstPParent = document.querySelector(".firstP-parent");
+     firstPParent.children[i + 2].children[0].classList.remove("d-none");
+    }else{
+      console.log("no active")
+    }
+  }
+
+  // const prueba = parent.querySelectorAll(".prueba");
+  // prueba.forEach((e)=>{
+
+  //      const title = e.querySelector(".title")
+
+  //   if (title.children[0].classList.contains("active")){
+  //         console.log("title")
+  //         console.log(title.)
+  //         // i.querySelectorAll(".firstP").forEach((k)=>{
+  //         //   k.classList.remove("d-none")
+  //         // })
+
+  //       }
+  // })
+
+
 }
 
 titles.forEach((title) => {
