@@ -26,13 +26,12 @@
     <h6 class="scope-title text-color line-grey-osc">REQUERIMIENTOS</h6>
     <div class="row justify-content-center title-parent">
       <% @quotation.requirements.each_with_index do |r, i| %>
-      <div class="prueba">
-        <div class="title ">
+      <div class="prueba col-md-4">
+        <div class="title text-center">
           <i class='fa fa-<%= r.nombre %>  <%= i == 0 ? "active" : "" %> '></i>
           <span class="nombre-requerimiento"><%= r.super_title %></span>
         </div>
-        <div class="">
-
+        <div class="text-center">
           <div class="firstP <%= i == 0 ? "" : "d-none" %>">
             <h4 class="titulos"><%= r.title %></h4>
             <% r.sub_requirements.each do |req| %>

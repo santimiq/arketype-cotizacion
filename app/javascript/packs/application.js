@@ -8,19 +8,14 @@ const application = Application.start()
 const context = require.context("../controllers", true, /\.js$/)
 application.load(definitionsFromContext(context))
 
-
 const titles = document.querySelectorAll(".title")
-
 
 const removeAll = function(node, className, hint){
   node.forEach((e)=>{
-
    const first =  e.children[0];
-
     if (first.classList.contains(className) && first.classList.contains(hint)) {
         first.classList.remove(className)
     }
-
   })
 };
 
@@ -30,14 +25,11 @@ const hideAll = function() {
   })
 }
 
-
-
 const addActiveToI = function(e){
   const first = e.children[0];
     if(first.classList.contains("fa")){
       first.classList.add("active")
     }
-
 }
 
 const removeDNoneIfIconIsActive = function(){
@@ -60,50 +52,16 @@ const removeDNoneIfIconIsActive = function(){
   })
 }
 
-
-
 titles.forEach((title) => {
   title.addEventListener("click", (event) => {
-
     document.querySelectorAll(".firstP").forEach((element) => {
-
       if(event.target.classList.contains("active")){
-
       }else{
         removeAll(titles,"active", "fa")
         addActiveToI(title)
-
-
         hideAll()
         removeDNoneIfIconIsActive()
-
     }
     })
   })
 })
-
-
-
-
-
-
-
-
-
-
-// const titles = document.querySelectorAll(".title")
-
-// titles.forEach((title) => {
-//   title.addEventListener("click", (event) => {
-
-//     document.querySelectorAll(".firstP").forEach((element) => {
-
-//       if (event.target.nextElementSibling.classList.contains("d-none") && !(event.target.nextElementSibling == element)) {
-
-//         element.classList.toggle("d-none")
-//       }
-//       element.classList.toggle("d-none")
-//     })
-//   })
-// })
-
