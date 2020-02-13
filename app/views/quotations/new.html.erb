@@ -39,7 +39,12 @@
             </div>
             <%= link_to_add_association 'Agregar Fase', f, :phases, class: 'btn btn-primary', data: { association_insertion_node: '.phases', association_insertion_method: :append } %>
 
+
             <div class="concepts">
+              <%= f.simple_fields_for :concept_quotations do |cq| %>
+                <h4>Concepto Cotizacion</h4>
+                <%= render 'concept_quotations_fields', f: cq %>
+              <% end %>
               <%= f.simple_fields_for :concepts do |con| %>
                 <h4>CONCEPTOS</h4>
                 <%= render 'concept_fields', f: con %>

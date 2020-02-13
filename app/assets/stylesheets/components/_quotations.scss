@@ -25,10 +25,15 @@
     line-height: 32px;
     letter-spacing: 3px;
   }
+
+  .container {
+    padding: 20px 0 0 0 !important;
+  }
 }
 
 .background-banner {
   background-color: #292929;
+  padding: 0px 15px !important;
 }
 
 .line-grey-2 {

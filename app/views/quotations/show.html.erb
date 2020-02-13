@@ -82,6 +82,13 @@
               <th>Cantidad</th>
               <th class="text-right">Subtotal</th>
             </tr>
+            <tr>
+              <th>
+                <% @quotation.concept_quotations.each.each do |cq| %>
+                  <h5><%= cq.concepto %></h5>
+                <% end %>
+              </th>
+            </tr>
           </thead>
           <% @quotation.concepts.each do |concept| %>
           <tbody>
