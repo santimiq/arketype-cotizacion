@@ -79,6 +79,7 @@
   color: #fff;
   font-size: 12px;
   line-height: 24px;
+  margin-bottom: 0px !important;
 }
 
 h4 {
@@ -106,7 +107,7 @@ h4 {
   font-weight: 700;
   color: #fff;
   opacity: .5;
-
+  font-family: $headers-font;
   &.active {
     opacity: 1;
   }
