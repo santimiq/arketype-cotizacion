@@ -83,9 +83,9 @@
               <th class="text-right">Subtotal</th>
             </tr>
             <tr>
-              <th>
+              <th class="th-none">
                 <% @quotation.concept_quotations.each.each do |cq| %>
-                  <h5><%= cq.concepto %></h5>
+                  <h5 class="cq-concepto"><%= cq.concepto %></h5>
                 <% end %>
               </th>
             </tr>
