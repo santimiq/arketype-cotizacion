@@ -23,3 +23,7 @@
 .title-parent {
   margin-bottom: 24px;
 }
+
+fieldset>legend {
+    display: none;
+}
