@@ -8,9 +8,9 @@ class QuotationsController < ApplicationController
 
   def show
     @quotation = Quotation.find_by slug: params[:slug]
-     authorize @quotation
-     @skip_navbar = true
-     @skip_navbar = false if current_user
+    authorize @quotation
+    @skip_navbar = true
+    @skip_navbar = false if current_user
   end
 
   def new
