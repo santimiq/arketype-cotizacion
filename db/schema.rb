@@ -49,14 +49,6 @@ ActiveRecord::Schema.define(version: 2020_02_13_181715) do
     t.index ["quotation_id"], name: "index_days_on_quotation_id"
   end
 
-  create_table "fecha_habils", force: :cascade do |t|
-    t.string "fecha"
-    t.bigint "quotation_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["quotation_id"], name: "index_fecha_habils_on_quotation_id"
-  end
-
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -93,7 +85,6 @@ ActiveRecord::Schema.define(version: 2020_02_13_181715) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
-    t.string "photo"
     t.string "slug"
     t.index ["slug"], name: "index_quotations_on_slug", unique: true
     t.index ["user_id"], name: "index_quotations_on_user_id"
@@ -142,7 +133,6 @@ ActiveRecord::Schema.define(version: 2020_02_13_181715) do
   add_foreign_key "concepts", "quotations"
   add_foreign_key "conditions", "quotations"
   add_foreign_key "days", "quotations"
-  add_foreign_key "fecha_habils", "quotations"
   add_foreign_key "icons", "requirements"
   add_foreign_key "phases", "quotations"
   add_foreign_key "quotations", "users"
