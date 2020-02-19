@@ -5,13 +5,18 @@
     </div>
       <% @quotations.each do |quotation| %>
       <div class="line-grey row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h4 class="text-quotation"><%= quotation.titulo %></h4>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <span class="span-text"><%= quotation.servicio %></span>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
+          <%= link_to edit_quotation_path(quotation) do %>
+          <button class="btn-index  float-right">Editar</button>
+          <% end %>
+        </div>
+        <div class="col-md-3">
           <%= link_to quotation_path(quotation) do %>
           <button class="btn-index  float-right">VER</button>
           <% end %>
