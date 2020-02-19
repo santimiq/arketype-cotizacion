@@ -20,17 +20,28 @@ class Quotation < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   extend FriendlyId
-  friendly_id :titulo, use: :slugged
+  # friendly_id :titulo, use: :slugged
+   friendly_id :slug_candidates, use: :slugged
+   def slug_candidates
+    SecureRandom.uuid
+   end
 
   validates :titulo, presence: :true
   validates :servicio, presence: :true
   validates :scope, presence: :true
   validates :fecha, presence: :true
 
-  def slug=(value)
-    if value.present?
-      write_attribute(:slug, value)
-    end
-  end
+  # def slug=(value)
+  #   if value.present?
+  #     write_attribute(:slug, value)
+  #   end
+  # end
+
+  # def set_slug
+  #   loop do
+  #     self.slug = SecureRandom.uuid
+  #     break unless Quotation.where(slug: slug).exists?
+  #   end
+  # end
 
 end
