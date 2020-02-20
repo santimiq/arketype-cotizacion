@@ -5,20 +5,21 @@
     </div>
       <% @quotations.each do |quotation| %>
       <div class="line-grey row">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <h4 class="text-quotation"><%= quotation.titulo %></h4>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <span class="span-text"><%= quotation.servicio %></span>
         </div>
-        <div class="col-md-3">
-          <%= link_to edit_quotation_path(quotation) do %>
-          <button class="btn-index  float-right">Editar</button>
-          <% end %>
-        </div>
-        <div class="col-md-3">
+        <div class="col-md-4 text-right iconos-index">
           <%= link_to quotation_path(quotation) do %>
-          <button class="btn-index  float-right">VER</button>
+            <i class="fas fa-eye"></i>
+          <% end %>
+          <%= link_to edit_quotation_path(quotation) do %>
+            <i class="fas fa-pencil-alt"></i>
+          <% end %>
+          <%= link_to  quotation_path(quotation), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fas fa-trash"></i>
           <% end %>
         </div>
         </div>
