@@ -1,5 +1,7 @@
 import "bootstrap";
 
+import { previewImageOnFileSelect } from '../components/photo_preview'
+previewImageOnFileSelect();
 
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"

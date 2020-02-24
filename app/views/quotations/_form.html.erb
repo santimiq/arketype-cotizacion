@@ -15,8 +15,9 @@
             </div>
             <%= f.input :fecha %>
             <%= f.input :scope, placeholder: 'Descripción (Cada enter es una línea aparte)' %>
-            <%= f.input :photo %>
-            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Subir foto' %>
+            <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+
 
             <div class="requirements">
               <%= f.simple_fields_for :requirements do |pf| %>
