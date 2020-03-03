@@ -42,3 +42,11 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+
+@media screen and (max-width: 500px) {
+  .button-right {
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
