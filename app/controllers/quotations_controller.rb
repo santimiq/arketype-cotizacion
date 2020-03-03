@@ -2,7 +2,7 @@ class QuotationsController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
   before_action :find_quotation, only: [ :edit, :update, :destroy ]
   def index
-    @quotations = policy_scope(Quotation).all
+    @quotations = policy_scope(Quotation).all.order(created_at: :desc)
   end
 
 

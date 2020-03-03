@@ -27,3 +27,11 @@
 fieldset>legend {
     display: none;
 }
+
+@media screen and (max-width: 500px) {
+  .title {
+    i {
+      font-size: 32px;
+    }
+  }
+}
